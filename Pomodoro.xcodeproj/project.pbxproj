@@ -13,6 +13,12 @@
 		2F9A9CD1220C3DE40096E2A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F9A9CCF220C3DE40096E2A2 /* Main.storyboard */; };
 		2F9A9CE8220C3DE40096E2A2 /* PomodoroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A9CE7220C3DE40096E2A2 /* PomodoroUITests.swift */; };
 		2F9A9CF6220C45B20096E2A2 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A9CF5220C45B20096E2A2 /* EventMonitor.swift */; };
+		2F9A9CF9220C49A70096E2A2 /* PomodoroPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A9CF8220C49A70096E2A2 /* PomodoroPresenterTest.swift */; };
+		2F9A9CFB220C49EF0096E2A2 /* PomodoroPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A9CFA220C49EF0096E2A2 /* PomodoroPresenter.swift */; };
+		2F9A9CFD220C4A510096E2A2 /* PomodoroContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A9CFC220C4A510096E2A2 /* PomodoroContract.swift */; };
+		2F9A9CFF220C4C0E0096E2A2 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A9CFE220C4C0E0096E2A2 /* State.swift */; };
+		2F9A9D04220C4EB50096E2A2 /* InitialConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A9D03220C4EB50096E2A2 /* InitialConfiguration.swift */; };
+		2F9A9D06220C53A00096E2A2 /* RunningInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A9D05220C53A00096E2A2 /* RunningInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +52,13 @@
 		2F9A9CE7220C3DE40096E2A2 /* PomodoroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroUITests.swift; sourceTree = "<group>"; };
 		2F9A9CE9220C3DE40096E2A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F9A9CF5220C45B20096E2A2 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		2F9A9CF7220C49A70096E2A2 /* PomodoroTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PomodoroTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		2F9A9CF8220C49A70096E2A2 /* PomodoroPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroPresenterTest.swift; sourceTree = "<group>"; };
+		2F9A9CFA220C49EF0096E2A2 /* PomodoroPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroPresenter.swift; sourceTree = "<group>"; };
+		2F9A9CFC220C4A510096E2A2 /* PomodoroContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroContract.swift; sourceTree = "<group>"; };
+		2F9A9CFE220C4C0E0096E2A2 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		2F9A9D03220C4EB50096E2A2 /* InitialConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialConfiguration.swift; sourceTree = "<group>"; };
+		2F9A9D05220C53A00096E2A2 /* RunningInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +109,9 @@
 		2F9A9CC8220C3DE20096E2A2 /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				2F9A9D02220C4E6B0096E2A2 /* Main */,
+				2F9A9D01220C4E550096E2A2 /* Entities */,
 				2F9A9CC9220C3DE20096E2A2 /* AppDelegate.swift */,
-				2F9A9CCB220C3DE20096E2A2 /* MainPomodoroViewController.swift */,
 				2F9A9CCD220C3DE40096E2A2 /* Assets.xcassets */,
 				2F9A9CCF220C3DE40096E2A2 /* Main.storyboard */,
 				2F9A9CD2220C3DE40096E2A2 /* Info.plist */,
@@ -111,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				2F9A9CDE220C3DE40096E2A2 /* Info.plist */,
+				2F9A9CF8220C49A70096E2A2 /* PomodoroPresenterTest.swift */,
+				2F9A9CF7220C49A70096E2A2 /* PomodoroTests-Bridging-Header.h */,
 			);
 			path = PomodoroTests;
 			sourceTree = "<group>";
@@ -122,6 +138,26 @@
 				2F9A9CE9220C3DE40096E2A2 /* Info.plist */,
 			);
 			path = PomodoroUITests;
+			sourceTree = "<group>";
+		};
+		2F9A9D01220C4E550096E2A2 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				2F9A9CFE220C4C0E0096E2A2 /* State.swift */,
+				2F9A9D03220C4EB50096E2A2 /* InitialConfiguration.swift */,
+				2F9A9D05220C53A00096E2A2 /* RunningInformation.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		2F9A9D02220C4E6B0096E2A2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2F9A9CCB220C3DE20096E2A2 /* MainPomodoroViewController.swift */,
+				2F9A9CFA220C49EF0096E2A2 /* PomodoroPresenter.swift */,
+				2F9A9CFC220C4A510096E2A2 /* PomodoroContract.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +231,7 @@
 					};
 					2F9A9CD7220C3DE40096E2A2 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 2F9A9CC5220C3DE20096E2A2;
 					};
 					2F9A9CE2220C3DE40096E2A2 = {
@@ -255,8 +292,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F9A9CF6220C45B20096E2A2 /* EventMonitor.swift in Sources */,
+				2F9A9CFB220C49EF0096E2A2 /* PomodoroPresenter.swift in Sources */,
+				2F9A9CFD220C4A510096E2A2 /* PomodoroContract.swift in Sources */,
 				2F9A9CCC220C3DE20096E2A2 /* MainPomodoroViewController.swift in Sources */,
 				2F9A9CCA220C3DE20096E2A2 /* AppDelegate.swift in Sources */,
+				2F9A9CFF220C4C0E0096E2A2 /* State.swift in Sources */,
+				2F9A9D04220C4EB50096E2A2 /* InitialConfiguration.swift in Sources */,
+				2F9A9D06220C53A00096E2A2 /* RunningInformation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F9A9CF9220C49A70096E2A2 /* PomodoroPresenterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +503,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = CA2AKZS8UU;
@@ -471,6 +515,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.santifranco.PomodoroTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PomodoroTests/PomodoroTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pomodoro.app/Contents/MacOS/Pomodoro";
 			};
@@ -481,6 +527,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = CA2AKZS8UU;
@@ -492,6 +539,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.santifranco.PomodoroTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PomodoroTests/PomodoroTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pomodoro.app/Contents/MacOS/Pomodoro";
 			};
