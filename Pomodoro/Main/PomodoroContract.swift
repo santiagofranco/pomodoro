@@ -18,6 +18,7 @@ protocol MainPomodoroViewDelegate {
     func viewDidAppear()
     func didTapStart(with configuration: InitialConfiguration)
     func didTapPause()
+    func didTapResume()
 }
 
 protocol StateManager {
@@ -29,6 +30,7 @@ protocol StateManager {
     func unsubscribe()
     func subscribe(observer: StateManagerTimeObserver)
     func pauseTimer()
+    func resumeTimer()
 }
 
 protocol StateManagerTimeObserver {

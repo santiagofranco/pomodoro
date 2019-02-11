@@ -49,6 +49,10 @@ extension PomodoroPresenter: MainPomodoroViewDelegate {
     func didTapPause() {
         stateManager.pauseTimer()
     }
+    
+    func didTapResume() {
+        stateManager.resumeTimer()
+    }
 }
 
 extension PomodoroPresenter: StateManagerTimeObserver {

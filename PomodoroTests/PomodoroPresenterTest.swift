@@ -142,6 +142,14 @@ class PomodoroPresenterTest: XCTestCase {
         
     }
     
+    func test_resume_timer_when_user_taps_on_resume_button() {
+        
+        presenter.didTapResume()
+        
+        XCTAssertTrue(stateManager.resumeTimerCalled)
+        
+    }
+    
     private class MockStateManager: StateManager {
         
         var currentState: State = .initial
@@ -151,6 +159,7 @@ class PomodoroPresenterTest: XCTestCase {
         var observer: StateManagerTimeObserver? = nil
         var pauseTimerCalled = false
         var configuration: InitialConfiguration?
+        var resumeTimerCalled = false
         
         func loadCurrentState() -> State {
             loadCurrentStateCalled = true
@@ -175,6 +184,10 @@ class PomodoroPresenterTest: XCTestCase {
         
         func pauseTimer() {
             pauseTimerCalled = true
+        }
+        
+        func resumeTimer() {
+            resumeTimerCalled = true
         }
         
     }
