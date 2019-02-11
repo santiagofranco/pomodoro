@@ -19,6 +19,7 @@
 		2F9A9CFF220C4C0E0096E2A2 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A9CFE220C4C0E0096E2A2 /* State.swift */; };
 		2F9A9D04220C4EB50096E2A2 /* InitialConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A9D03220C4EB50096E2A2 /* InitialConfiguration.swift */; };
 		2F9A9D06220C53A00096E2A2 /* RunningInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A9D05220C53A00096E2A2 /* RunningInformation.swift */; };
+		2F9A9D0A221200AD0096E2A2 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A9D09221200AD0096E2A2 /* StateManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		2F9A9CFE220C4C0E0096E2A2 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		2F9A9D03220C4EB50096E2A2 /* InitialConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialConfiguration.swift; sourceTree = "<group>"; };
 		2F9A9D05220C53A00096E2A2 /* RunningInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningInformation.swift; sourceTree = "<group>"; };
+		2F9A9D09221200AD0096E2A2 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +111,9 @@
 		2F9A9CC8220C3DE20096E2A2 /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
-				2F9A9D02220C4E6B0096E2A2 /* Main */,
 				2F9A9D01220C4E550096E2A2 /* Entities */,
+				2F9A9D08221200950096E2A2 /* Modules */,
+				2F9A9D07221200830096E2A2 /* Services */,
 				2F9A9CC9220C3DE20096E2A2 /* AppDelegate.swift */,
 				2F9A9CCD220C3DE40096E2A2 /* Assets.xcassets */,
 				2F9A9CCF220C3DE40096E2A2 /* Main.storyboard */,
@@ -158,6 +161,22 @@
 				2F9A9CFC220C4A510096E2A2 /* PomodoroContract.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		2F9A9D07221200830096E2A2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2F9A9D09221200AD0096E2A2 /* StateManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2F9A9D08221200950096E2A2 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2F9A9D02220C4E6B0096E2A2 /* Main */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F9A9D0A221200AD0096E2A2 /* StateManager.swift in Sources */,
 				2F9A9CF6220C45B20096E2A2 /* EventMonitor.swift in Sources */,
 				2F9A9CFB220C49EF0096E2A2 /* PomodoroPresenter.swift in Sources */,
 				2F9A9CFD220C4A510096E2A2 /* PomodoroContract.swift in Sources */,

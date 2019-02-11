@@ -21,7 +21,9 @@ class PomodoroPresenter {
 
 
 extension PomodoroPresenter: MainPomodoroViewDelegate {
+    
     func viewDidAppear() {
+        
         stateManager.unsubscribe()
         let currentState = stateManager.loadCurrentState()
         switch currentState {
