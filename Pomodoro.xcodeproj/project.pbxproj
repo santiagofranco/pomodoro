@@ -22,6 +22,8 @@
 		2F9A9D0A221200AD0096E2A2 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A9D09221200AD0096E2A2 /* StateManager.swift */; };
 		2F9A9D0C221201160096E2A2 /* PomodoroStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A9D0B221201160096E2A2 /* PomodoroStateManager.swift */; };
 		2F9A9D0E221203570096E2A2 /* PomodoroModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A9D0D221203570096E2A2 /* PomodoroModule.swift */; };
+		2F9A9D122212DECA0096E2A2 /* InitialStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A9D102212DECA0096E2A2 /* InitialStateViewController.swift */; };
+		2F9A9D132212DECA0096E2A2 /* InitialStateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9A9D112212DECA0096E2A2 /* InitialStateViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		2F9A9D09221200AD0096E2A2 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
 		2F9A9D0B221201160096E2A2 /* PomodoroStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroStateManager.swift; sourceTree = "<group>"; };
 		2F9A9D0D221203570096E2A2 /* PomodoroModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroModule.swift; sourceTree = "<group>"; };
+		2F9A9D102212DECA0096E2A2 /* InitialStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialStateViewController.swift; sourceTree = "<group>"; };
+		2F9A9D112212DECA0096E2A2 /* InitialStateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialStateViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 		2F9A9D02220C4E6B0096E2A2 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				2F9A9D0F2212DE7D0096E2A2 /* StateViews */,
 				2F9A9CCB220C3DE20096E2A2 /* MainPomodoroViewController.swift */,
 				2F9A9CFA220C49EF0096E2A2 /* PomodoroPresenter.swift */,
 				2F9A9CFC220C4A510096E2A2 /* PomodoroContract.swift */,
@@ -183,6 +188,15 @@
 				2F9A9D02220C4E6B0096E2A2 /* Main */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		2F9A9D0F2212DE7D0096E2A2 /* StateViews */ = {
+			isa = PBXGroup;
+			children = (
+				2F9A9D102212DECA0096E2A2 /* InitialStateViewController.swift */,
+				2F9A9D112212DECA0096E2A2 /* InitialStateViewController.xib */,
+			);
+			path = StateViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F9A9D132212DECA0096E2A2 /* InitialStateViewController.xib in Resources */,
 				2F9A9CCE220C3DE40096E2A2 /* Assets.xcassets in Resources */,
 				2F9A9CD1220C3DE40096E2A2 /* Main.storyboard in Resources */,
 			);
@@ -322,6 +337,7 @@
 				2F9A9CFB220C49EF0096E2A2 /* PomodoroPresenter.swift in Sources */,
 				2F9A9CFD220C4A510096E2A2 /* PomodoroContract.swift in Sources */,
 				2F9A9CCC220C3DE20096E2A2 /* MainPomodoroViewController.swift in Sources */,
+				2F9A9D122212DECA0096E2A2 /* InitialStateViewController.swift in Sources */,
 				2F9A9CCA220C3DE20096E2A2 /* AppDelegate.swift in Sources */,
 				2F9A9D0C221201160096E2A2 /* PomodoroStateManager.swift in Sources */,
 				2F9A9CFF220C4C0E0096E2A2 /* State.swift in Sources */,

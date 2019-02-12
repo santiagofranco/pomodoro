@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="InitialStateViewController" customModule="Pomodoro" customModuleProvider="target">
+            <connections>
+                <outlet property="alert1" destination="yCH-1l-ATc" id="3Ut-bC-YHp"/>
+                <outlet property="alert2" destination="r8U-5a-sRF" id="Rxv-hI-6Um"/>
+                <outlet property="alert5" destination="enK-Ez-Kdr" id="e3L-wm-up9"/>
+                <outlet property="alertNone" destination="Ciw-Xh-zxY" id="zM2-nq-GRl"/>
+                <outlet property="break10" destination="iiE-Rg-FIp" id="XcV-2I-2d5"/>
+                <outlet property="break15" destination="mT9-eW-1zE" id="Mwx-Q6-Oz3"/>
+                <outlet property="break5" destination="z87-z2-9Nn" id="pjT-7h-8Bj"/>
+                <outlet property="notificationFullScreen" destination="UDr-gG-Dc6" id="Upx-81-BU0"/>
+                <outlet property="notificationPopover" destination="bQv-zJ-4pW" id="xTA-ia-3Vp"/>
+                <outlet property="time130h" destination="oJh-UD-Bwk" id="BYh-M0-eZO"/>
+                <outlet property="time2h" destination="Vgp-Ft-T4G" id="aqe-h3-53P"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kez-Kq-sMt">
+                    <rect key="frame" x="123" y="205" width="39" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="TIME:" id="Oy9-DZ-Wo2">
+                        <font key="font" usesAppearanceFont="YES"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vgp-Ft-T4G">
+                    <rect key="frame" x="199" y="205" width="38" height="18"/>
+                    <buttonCell key="cell" type="radio" title="2h" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="5BF-vb-SX7">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="timeRadioChanged:" target="-2" id="Zq3-g4-lLs"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oJh-UD-Bwk">
+                    <rect key="frame" x="259" y="205" width="56" height="18"/>
+                    <buttonCell key="cell" type="radio" title="1:30h" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="hg1-wH-uLY">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="timeRadioChanged:" target="-2" id="vBa-hJ-Hbt"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rac-66-r0f">
+                    <rect key="frame" x="123" y="163" width="50" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="BREAK:" id="woY-5s-RRj">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="z87-z2-9Nn">
+                    <rect key="frame" x="199" y="163" width="52" height="18"/>
+                    <buttonCell key="cell" type="radio" title="5min" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="jL1-mz-aAf">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="breakRadioChanged:" target="-2" id="Y0j-fp-iil"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="enK-Ez-Kdr">
+                    <rect key="frame" x="199" y="121" width="52" height="18"/>
+                    <buttonCell key="cell" type="radio" title="5min" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="jOm-hu-lmd">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="alertRadioChanged:" target="-2" id="GAk-5B-6qS"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="r8U-5a-sRF">
+                    <rect key="frame" x="259" y="121" width="52" height="18"/>
+                    <buttonCell key="cell" type="radio" title="2min" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="hPX-MA-cia">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="alertRadioChanged:" target="-2" id="e0v-pY-my9"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iiE-Rg-FIp">
+                    <rect key="frame" x="259" y="163" width="58" height="18"/>
+                    <buttonCell key="cell" type="radio" title="10min" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="mnJ-bZ-kJz">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="breakRadioChanged:" target="-2" id="tNQ-um-8DG"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mT9-eW-1zE">
+                    <rect key="frame" x="322" y="163" width="58" height="18"/>
+                    <buttonCell key="cell" type="radio" title="15min" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="kXB-Y6-15l">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="breakRadioChanged:" target="-2" id="KDa-Iw-08S"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kai-pt-2FE">
+                    <rect key="frame" x="123" y="121" width="48" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="ALERT:" id="ml9-2v-hip">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yCH-1l-ATc">
+                    <rect key="frame" x="322" y="121" width="50" height="18"/>
+                    <buttonCell key="cell" type="radio" title="1min" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Gbm-MA-YMs">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="alertRadioChanged:" target="-2" id="WXK-x9-Zdd"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ciw-Xh-zxY">
+                    <rect key="frame" x="385" y="121" width="55" height="18"/>
+                    <buttonCell key="cell" type="radio" title="None" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="uCD-lX-tSN">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="alertRadioChanged:" target="-2" id="ljL-KR-a0F"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I9x-0N-TC8">
+                    <rect key="frame" x="123" y="79" width="97" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="NOTIFICATION:" id="JdZ-7I-a7J">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bQv-zJ-4pW">
+                    <rect key="frame" x="237" y="79" width="72" height="18"/>
+                    <buttonCell key="cell" type="radio" title="Popover" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="8RU-ON-6o6">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="notificationRadioChanged:" target="-2" id="gft-kA-EcJ"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UDr-gG-Dc6">
+                    <rect key="frame" x="321" y="79" width="88" height="18"/>
+                    <buttonCell key="cell" type="radio" title="Full screen" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="xAu-V2-AUn">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="notificationRadioChanged:" target="-2" id="Ikd-Se-P1e"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qda-q3-nYQ">
+                    <rect key="frame" x="203" y="23" width="75" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="63" id="OZB-hn-10b"/>
+                        <constraint firstAttribute="height" constant="21" id="QK1-0d-qCe"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" title="START" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CkU-zi-8yD">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="startButtonPushed:" target="-2" id="aUJ-dZ-NPi"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="kez-Kq-sMt" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="50" id="2ly-iN-Rx1"/>
+                <constraint firstItem="z87-z2-9Nn" firstAttribute="leading" secondItem="Rac-66-r0f" secondAttribute="trailing" constant="29" id="3oQ-If-INp"/>
+                <constraint firstItem="yCH-1l-ATc" firstAttribute="leading" secondItem="r8U-5a-sRF" secondAttribute="trailing" constant="14" id="4Kc-ri-SI8"/>
+                <constraint firstItem="Vgp-Ft-T4G" firstAttribute="leading" secondItem="kez-Kq-sMt" secondAttribute="trailing" constant="40" id="7E3-XL-Nc3"/>
+                <constraint firstItem="I9x-0N-TC8" firstAttribute="top" secondItem="kai-pt-2FE" secondAttribute="bottom" constant="25" id="88J-xb-cFn"/>
+                <constraint firstItem="enK-Ez-Kdr" firstAttribute="centerY" secondItem="kai-pt-2FE" secondAttribute="centerY" id="8Gk-Yw-UrJ"/>
+                <constraint firstItem="mT9-eW-1zE" firstAttribute="centerY" secondItem="Rac-66-r0f" secondAttribute="centerY" id="8Wx-bX-V8Y"/>
+                <constraint firstItem="kez-Kq-sMt" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="125" id="8tK-z9-GJK"/>
+                <constraint firstItem="oJh-UD-Bwk" firstAttribute="centerY" secondItem="kez-Kq-sMt" secondAttribute="centerY" id="FJv-i9-KNb"/>
+                <constraint firstItem="mT9-eW-1zE" firstAttribute="leading" secondItem="iiE-Rg-FIp" secondAttribute="trailing" constant="8" id="Fps-bW-HvG"/>
+                <constraint firstItem="kai-pt-2FE" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="125" id="GXW-lc-9yD"/>
+                <constraint firstItem="UDr-gG-Dc6" firstAttribute="leading" secondItem="bQv-zJ-4pW" secondAttribute="trailing" constant="15" id="Hmg-yz-NxA"/>
+                <constraint firstItem="Rac-66-r0f" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="125" id="KGO-00-0bP"/>
+                <constraint firstItem="UDr-gG-Dc6" firstAttribute="centerY" secondItem="I9x-0N-TC8" secondAttribute="centerY" id="LgE-mY-b9u"/>
+                <constraint firstItem="Vgp-Ft-T4G" firstAttribute="centerY" secondItem="kez-Kq-sMt" secondAttribute="centerY" id="OyW-Vz-eDp"/>
+                <constraint firstItem="oJh-UD-Bwk" firstAttribute="leading" secondItem="Vgp-Ft-T4G" secondAttribute="trailing" constant="25" id="PyD-s4-Yy5"/>
+                <constraint firstItem="r8U-5a-sRF" firstAttribute="centerY" secondItem="kai-pt-2FE" secondAttribute="centerY" id="R1T-FK-msk"/>
+                <constraint firstItem="iiE-Rg-FIp" firstAttribute="leading" secondItem="z87-z2-9Nn" secondAttribute="trailing" constant="11" id="RGL-WZ-6pL"/>
+                <constraint firstItem="Rac-66-r0f" firstAttribute="top" secondItem="kez-Kq-sMt" secondAttribute="bottom" constant="25" id="SRQ-pI-r2O"/>
+                <constraint firstItem="z87-z2-9Nn" firstAttribute="centerY" secondItem="Rac-66-r0f" secondAttribute="centerY" id="VAh-hx-tM4"/>
+                <constraint firstItem="kai-pt-2FE" firstAttribute="top" secondItem="Rac-66-r0f" secondAttribute="bottom" constant="25" id="a6F-sV-ZKh"/>
+                <constraint firstItem="Ciw-Xh-zxY" firstAttribute="centerY" secondItem="kai-pt-2FE" secondAttribute="centerY" id="dKs-RD-IgM"/>
+                <constraint firstItem="iiE-Rg-FIp" firstAttribute="centerY" secondItem="Rac-66-r0f" secondAttribute="centerY" id="ds8-xk-YIZ"/>
+                <constraint firstAttribute="bottom" secondItem="qda-q3-nYQ" secondAttribute="bottom" constant="30" id="ehO-v0-UQe"/>
+                <constraint firstItem="bQv-zJ-4pW" firstAttribute="centerY" secondItem="I9x-0N-TC8" secondAttribute="centerY" id="fHT-4O-oq4"/>
+                <constraint firstItem="qda-q3-nYQ" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="hLZ-xL-lVL"/>
+                <constraint firstItem="bQv-zJ-4pW" firstAttribute="leading" secondItem="I9x-0N-TC8" secondAttribute="trailing" constant="20" id="jV6-tZ-OGd"/>
+                <constraint firstItem="Ciw-Xh-zxY" firstAttribute="leading" secondItem="yCH-1l-ATc" secondAttribute="trailing" constant="16" id="lOb-PK-21s"/>
+                <constraint firstItem="r8U-5a-sRF" firstAttribute="leading" secondItem="enK-Ez-Kdr" secondAttribute="trailing" constant="11" id="r0F-QS-6a8"/>
+                <constraint firstItem="yCH-1l-ATc" firstAttribute="centerY" secondItem="kai-pt-2FE" secondAttribute="centerY" id="vXg-A1-i46"/>
+                <constraint firstItem="I9x-0N-TC8" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="125" id="x7z-sm-L4r"/>
+                <constraint firstItem="enK-Ez-Kdr" firstAttribute="leading" secondItem="kai-pt-2FE" secondAttribute="trailing" constant="31" id="zID-AU-TvW"/>
+            </constraints>
+        </customView>
+    </objects>
+</document>
