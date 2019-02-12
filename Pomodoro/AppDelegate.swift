@@ -31,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     fileprivate func setupPopover() {
-        popover.contentViewController = MainPomodoroViewController.refreshedController()
+        popover.contentViewController = PomodoroModule.viewController()
     }
     
     fileprivate func setupEventMonitor() {

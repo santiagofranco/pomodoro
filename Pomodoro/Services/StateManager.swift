@@ -18,9 +18,11 @@ protocol StateManager {
     func subscribe(observer: StateManagerTimeObserver)
     func pauseTimer()
     func resumeTimer()
+    func stopTimer()
 }
 
 protocol StateManagerTimeObserver {
     func didUpdateTime()
+    func didFinishRunningTimer()
     
 }

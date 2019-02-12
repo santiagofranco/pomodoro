@@ -9,9 +9,14 @@
 import Foundation
 
 protocol MainPomodoroView {
+    
+    var delegate: MainPomodoroViewDelegate? { get set }
+    
     func showInitialView()
     func showRunningView(with info: RunningInformation)
     func showPauseView(with info: RunningInformation)
+    func showPopoverNotificationView()
+    func showFullScreenNotificationView()
 }
 
 protocol MainPomodoroViewDelegate {
@@ -19,4 +24,5 @@ protocol MainPomodoroViewDelegate {
     func didTapStart(with configuration: InitialConfiguration)
     func didTapPause()
     func didTapResume()
+    func didTapStop()
 }

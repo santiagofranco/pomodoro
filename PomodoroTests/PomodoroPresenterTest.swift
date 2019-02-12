@@ -150,6 +150,63 @@ class PomodoroPresenterTest: XCTestCase {
         
     }
     
+    func test_stop_timer_when_user_taps_on_stop_buttom() {
+        
+        presenter.didTapStop()
+        
+        XCTAssertTrue(stateManager.stopTimerCalled)
+        
+    }
+    
+    func test_show_popover_notification_view_when_running_timer_finish_and_configured_notification_is_popover() {
+        
+        let givenConfiguration = InitialConfiguration(time: .two, break: .ten, alert: .one, notificationType: .popover)
+        stateManager.configuration = givenConfiguration
+        
+        presenter.didFinishRunningTimer()
+        
+        XCTAssertTrue(view.showPopoverNotificationViewCalled)
+        XCTAssertFalse(view.showFullScreenNotificationViewCalled)
+    }
+    
+    func test_show_full_screen_notification_view_when_running_timer_finish_and_configured_notification_is_full_screen() {
+        
+        let givenConfiguration = InitialConfiguration(time: .two, break: .ten, alert: .one, notificationType: .fullScreen)
+        stateManager.configuration = givenConfiguration
+        
+        presenter.didFinishRunningTimer()
+        
+        XCTAssertTrue(view.showFullScreenNotificationViewCalled)
+        XCTAssertFalse(view.showPopoverNotificationViewCalled)
+    }
+    
+    func test_show_popover_notification_view_when_view_appear_and_configured_notification_is_popover() {
+        
+        let givenState: State = .notifying
+        stateManager.currentState = givenState
+        let givenConfiguration = InitialConfiguration(time: .two, break: .ten, alert: .one, notificationType: .popover)
+        stateManager.configuration = givenConfiguration
+        
+        presenter.viewDidAppear()
+        
+        XCTAssertTrue(view.showPopoverNotificationViewCalled)
+        XCTAssertFalse(view.showFullScreenNotificationViewCalled)
+    }
+    
+    func test_show_full_screen_notification_view_when_view_appear_and_configured_notification_is_full_screen() {
+        
+        let givenState: State = .notifying
+        stateManager.currentState = givenState
+        let givenConfiguration = InitialConfiguration(time: .two, break: .ten, alert: .one, notificationType: .fullScreen)
+        stateManager.configuration = givenConfiguration
+        
+        presenter.viewDidAppear()
+        
+        XCTAssertTrue(view.showFullScreenNotificationViewCalled)
+        XCTAssertFalse(view.showPopoverNotificationViewCalled)
+    }
+    
+    
     private class MockStateManager: StateManager {
         
         var currentState: State = .initial
@@ -160,6 +217,7 @@ class PomodoroPresenterTest: XCTestCase {
         var pauseTimerCalled = false
         var configuration: InitialConfiguration?
         var resumeTimerCalled = false
+        var stopTimerCalled = false
         
         func loadCurrentState() -> State {
             loadCurrentStateCalled = true
@@ -190,13 +248,21 @@ class PomodoroPresenterTest: XCTestCase {
             resumeTimerCalled = true
         }
         
+        func stopTimer() {
+            stopTimerCalled = true
+        }
+        
     }
 
     private class MockView: MainPomodoroView {
+        var delegate: MainPomodoroViewDelegate?
+        
         var showInitialViewCalled = false
         var showRunningViewCalled = false
         var runningInformation: RunningInformation? = nil
         var showPauseViewCalled = false
+        var showPopoverNotificationViewCalled = false
+        var showFullScreenNotificationViewCalled = false
         
         func showInitialView() {
             showInitialViewCalled = true
@@ -210,6 +276,14 @@ class PomodoroPresenterTest: XCTestCase {
         func showPauseView(with info: RunningInformation) {
             showPauseViewCalled = true
             self.runningInformation = info
+        }
+        
+        func showPopoverNotificationView() {
+            showPopoverNotificationViewCalled = true
+        }
+        
+        func showFullScreenNotificationView() {
+            showFullScreenNotificationViewCalled = true
         }
     }
 }

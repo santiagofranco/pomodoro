@@ -10,6 +10,8 @@ import Cocoa
 
 class MainPomodoroViewController: NSViewController {
 
+    var delegate: MainPomodoroViewDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("VIEW DID LOAD")
@@ -25,23 +27,31 @@ class MainPomodoroViewController: NSViewController {
     
     override func viewDidAppear() {
         print("VIEW DID APPEAR")
+        delegate?.viewDidAppear()
     }
 
 
 }
 
-extension MainPomodoroViewController {
-    static func refreshedController() -> MainPomodoroViewController {
+extension MainPomodoroViewController: MainPomodoroView {
+    
+    func showInitialView() {
         
-        guard let storyboard = NSStoryboard.main else {
-            fatalError("Cant find main story board")
-        }
+    }
+    
+    func showRunningView(with info: RunningInformation) {
         
-        let identifier = NSStoryboard.SceneIdentifier("MainPomodoroViewController")
+    }
+    
+    func showPauseView(with info: RunningInformation) {
         
-        guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? MainPomodoroViewController else {
-            fatalError("Why cant i find MainPomodoroViewController? - Check Main.storyboard")
-        }
-        return viewcontroller
+    }
+    
+    func showPopoverNotificationView() {
+        
+    }
+    
+    func showFullScreenNotificationView() {
+        
     }
 }

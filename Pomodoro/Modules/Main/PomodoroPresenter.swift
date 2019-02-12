@@ -17,6 +17,21 @@ class PomodoroPresenter {
         self.stateManager = stateManager
         self.view = view
     }
+    
+    fileprivate func showNotifyingView() {
+        guard let config = stateManager.configuration else {
+            return
+        }
+        
+        switch config.notificationType {
+        case .popover:
+            view.showPopoverNotificationView()
+            return
+        case .fullScreen:
+            view.showFullScreenNotificationView()
+            return
+        }
+    }
 }
 
 
@@ -39,6 +54,10 @@ extension PomodoroPresenter: MainPomodoroViewDelegate {
         case .paused:
             view.showPauseView(with: stateManager.loadRunningInformation())
             return
+            
+        case .notifying:
+            showNotifyingView()
+            return
         }
         
     }
@@ -55,10 +74,18 @@ extension PomodoroPresenter: MainPomodoroViewDelegate {
     func didTapResume() {
         stateManager.resumeTimer()
     }
+    
+    func didTapStop() {
+        stateManager.stopTimer()
+    }
 }
 
 extension PomodoroPresenter: StateManagerTimeObserver {
     func didUpdateTime() {
         view.showRunningView(with: stateManager.loadRunningInformation())
+    }
+    
+    func didFinishRunningTimer() {
+        showNotifyingView()
     }
 }

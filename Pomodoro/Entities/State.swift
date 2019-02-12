@@ -12,4 +12,5 @@ enum State {
     case initial
     case running
     case paused
+    case notifying
 }
