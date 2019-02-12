@@ -31,13 +31,17 @@ class PomodoroStateManager: StateManager {
     }
     
     func loadRunningInformation() -> RunningInformation {
+        
+        let hoursLeft = currentSecondsLeft / 3600
+        let minutesLeft = currentSecondsLeft / 60
+        
         return RunningInformation(
-            hoursLeft: "",
-            minutesLeft: "",
-            secondsLeft: "",
-            breakText: "",
-            alertText: "",
-            notificationText: ""
+            hoursLeft: "\(hoursLeft)",
+            minutesLeft: "\(minutesLeft)",
+            secondsLeft: "\(currentSecondsLeft)",
+            breakText: configuration?.break.text ?? "",
+            alertText: configuration?.alert.text ?? "",
+            notificationText: configuration?.notificationType.text ?? ""
         )
     }
     
@@ -66,10 +70,12 @@ class PomodoroStateManager: StateManager {
     
     fileprivate func initializeTimer() {
         currentState = .running
-        runningTimer = Timer.init(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        runningTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in 
+            self.updateTimer()
+        }
     }
     
-    @objc fileprivate func updateTimer() {
+    fileprivate func updateTimer() {
         currentSecondsLeft = currentSecondsLeft - 1
         
         if isTimeFinished() {
@@ -132,6 +138,59 @@ fileprivate extension InitialConfiguration.BreakTimeMinutes {
             return 600
         case .five:
             return 300
+        }
+    }
+    
+    var text: String {
+        switch self {
+        case .fifteen:
+            return "15min"
+        case .ten:
+            return "10min"
+        case .five:
+            return "5min"
+        }
+    }
+}
+
+fileprivate extension InitialConfiguration.AlertTimeMinutes {
+    
+    var seconds: Int {
+        switch self {
+        case .none:
+            return 0
+        case .one:
+            return 60
+        case .two:
+            return 120
+        case .five:
+            return 300
+        }
+    }
+    
+    var text: String {
+        switch self {
+        case .none:
+            return "None"
+        case .one:
+            return "1min"
+        case .two:
+            return "2min"
+        case .five:
+            return "5min"
+        }
+    }
+}
+
+fileprivate extension InitialConfiguration.NotificationType {
+    
+    
+    var text: String {
+        switch self {
+        case .popover:
+            return "Popover"
+        case .fullScreen:
+            return "Full Screen"
         }
     }
 }
