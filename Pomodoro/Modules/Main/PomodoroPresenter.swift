@@ -64,6 +64,7 @@ extension PomodoroPresenter: MainPomodoroViewDelegate {
     
     func didTapStart(with configuration: InitialConfiguration) {
         stateManager.configuration = configuration
+        stateManager.subscribe(observer: self)
         stateManager.startTimer()
     }
     

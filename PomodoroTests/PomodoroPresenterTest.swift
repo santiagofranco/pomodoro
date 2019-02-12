@@ -82,6 +82,14 @@ class PomodoroPresenterTest: XCTestCase {
         XCTAssertEqual(stateManager.configuration!, givenConfiguration)
     }
     
+    func test_subscribe_timer_when_view_user_taps_start_button() {
+        let givenConfiguration = InitialConfiguration(time: .two, break: .ten, alert: .one, notificationType: .fullScreen)
+        
+        presenter.didTapStart(with: givenConfiguration)
+        
+        XCTAssertNotNil(stateManager.observer)
+    }
+    
     func test_show_running_view_when_view_appear_and_current_state_is_running() {
         
         let givenState: State = .running
