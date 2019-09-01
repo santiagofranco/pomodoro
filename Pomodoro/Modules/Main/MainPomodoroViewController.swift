@@ -14,7 +14,12 @@ class MainPomodoroViewController: NSViewController {
        InitialStateViewController(delegate: self)
     }()
     
+    lazy var runningStateViewController: RunningStateViewController = {
+        RunningStateViewController(delegate: self)
+    }()
+    
     var delegate: MainPomodoroViewDelegate?
+    var currentChildVC: NSViewController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,18 +38,33 @@ class MainPomodoroViewController: NSViewController {
         print("VIEW DID APPEAR")
         delegate?.viewDidAppear()
     }
-
+    
+    fileprivate func show(viewController: NSViewController) {
+        
+        guard currentChildVC != viewController else {
+            return
+        }
+        
+        currentChildVC?.removeFromParent()
+        self.view = viewController.view
+        self.addChild(viewController)
+        currentChildVC = viewController
+    }
 
 }
 
 extension MainPomodoroViewController: MainPomodoroView {
     
     func showInitialView() {
-        self.view = initialStateViewController.view
+        show(viewController: initialStateViewController)
     }
     
     func showRunningView(with info: RunningInformation) {
+        if currentChildVC != runningStateViewController {
+            show(viewController: runningStateViewController)
+        }
         
+        runningStateViewController.bind(info: info)
     }
     
     func showPauseView(with info: RunningInformation) {
@@ -79,6 +99,10 @@ extension MainPomodoroViewController: InitialStateViewControllerDelegate {
         
         delegate?.didTapStart(with: config)
     }
+}
+
+extension MainPomodoroViewController: RunningStateViewControllerDelegate {
+    
 }
 
 extension InitialStateViewController {

@@ -37,8 +37,8 @@ class PomodoroStateManager: StateManager {
         
         return RunningInformation(
             hoursLeft: "\(hoursLeft)",
-            minutesLeft: "\(minutesLeft)",
-            secondsLeft: "\(currentSecondsLeft)",
+            minutesLeft: "\(minutesLeft%60)",
+            secondsLeft: String(currentSecondsLeft - (minutesLeft * 60)),
             breakText: configuration?.break.text ?? "",
             alertText: configuration?.alert.text ?? "",
             notificationText: configuration?.notificationType.text ?? ""
@@ -121,7 +121,7 @@ fileprivate extension InitialConfiguration.TimeHours {
     var seconds: Int {
         switch self {
         case .two:
-            return 7200
+            return 60
         case .oneAndHalf:
             return 5400
         }

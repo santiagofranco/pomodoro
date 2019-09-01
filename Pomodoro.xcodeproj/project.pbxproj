@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F01439C2219875500E59CBB /* RunningStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01439A2219875500E59CBB /* RunningStateViewController.swift */; };
+		2F01439D2219875500E59CBB /* RunningStateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F01439B2219875500E59CBB /* RunningStateViewController.xib */; };
 		2F9A9CCA220C3DE20096E2A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A9CC9220C3DE20096E2A2 /* AppDelegate.swift */; };
 		2F9A9CCC220C3DE20096E2A2 /* MainPomodoroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A9CCB220C3DE20096E2A2 /* MainPomodoroViewController.swift */; };
 		2F9A9CCE220C3DE40096E2A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F9A9CCD220C3DE40096E2A2 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F01439A2219875500E59CBB /* RunningStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningStateViewController.swift; sourceTree = "<group>"; };
+		2F01439B2219875500E59CBB /* RunningStateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunningStateViewController.xib; sourceTree = "<group>"; };
 		2F9A9CC6220C3DE20096E2A2 /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F9A9CC9220C3DE20096E2A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F9A9CCB220C3DE20096E2A2 /* MainPomodoroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPomodoroViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +199,8 @@
 			children = (
 				2F9A9D102212DECA0096E2A2 /* InitialStateViewController.swift */,
 				2F9A9D112212DECA0096E2A2 /* InitialStateViewController.xib */,
+				2F01439A2219875500E59CBB /* RunningStateViewController.swift */,
+				2F01439B2219875500E59CBB /* RunningStateViewController.xib */,
 			);
 			path = StateViews;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F01439D2219875500E59CBB /* RunningStateViewController.xib in Resources */,
 				2F9A9D132212DECA0096E2A2 /* InitialStateViewController.xib in Resources */,
 				2F9A9CCE220C3DE40096E2A2 /* Assets.xcassets in Resources */,
 				2F9A9CD1220C3DE40096E2A2 /* Main.storyboard in Resources */,
@@ -343,6 +350,7 @@
 				2F9A9CFF220C4C0E0096E2A2 /* State.swift in Sources */,
 				2F9A9D04220C4EB50096E2A2 /* InitialConfiguration.swift in Sources */,
 				2F9A9D06220C53A00096E2A2 /* RunningInformation.swift in Sources */,
+				2F01439C2219875500E59CBB /* RunningStateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
